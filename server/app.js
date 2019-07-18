@@ -2,10 +2,11 @@ const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
+const keys = require('./config/keys');
 const app = express();
 const port = process.env.Port || 4000;
 
-mongoose.connect('mongodb+srv://jethro:jethro@cluster0-nir07.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
+mongoose.connect(keys.mongoURL, { useNewUrlParser: true });
 mongoose.connection.once('open', () =>{
     console.log('MongoDB Connected');
 })
