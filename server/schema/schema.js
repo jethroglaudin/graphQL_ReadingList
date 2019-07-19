@@ -11,7 +11,6 @@ const {
   GraphQLInt,
   GraphQLList,
   GraphQLNonNull
-
 } = graphql;
 
 const BookType = new GraphQLObjectType({
@@ -115,7 +114,7 @@ const Mutation = new GraphQLObjectType({
           genre: args.genre,
           authorId: args.authorId
         });
-        return book.save();  // saves to DB
+        return book.save(); // saves to DB
       }
     }
   }
